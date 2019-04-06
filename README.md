@@ -56,8 +56,11 @@ $n1->plot_training();
 $n1->plot_weight();
 
 ISSUE:
+
 1) In neuron.php have a look at line 174 
+
 2)Linear model is not working as expected due to logical error for now.I encourage to fork it.
+
 
 POTENTIAL:
 
