@@ -57,9 +57,14 @@ $n1->plot_weight();
 
 ISSUE:
 1) In neuron.php have a look at line 174 
-2)Linear model is not working as expected due to logical error for now.
+2)Linear model is not working as expected due to logical error for now.I encourage to fork it.
 
 POTENTIAL:
 1)We can use the linear.php for reinforement learning.
+
 2)We can implement diffrent realtime models.
-3)Will implement LTSM and CNN .
+
+3)Will implement LTSM and CNN in near future.
+
+4)Will integrate wirh OPENCV and take it forward.
+
