@@ -73,3 +73,5 @@ POTENTIAL:
 
 4)Will integrate wirh OPENCV and take it forward.
 
+5)we will add K4 cross validation test.
+
