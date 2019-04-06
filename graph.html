@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<meta charset="UTF-8">
+<script>
+function load_graph(title,ids,arr){
+var limit = arr.length;
+var y = 0;
+var data = [];
+var dataSeries = { type: "line" };
+var dataPoints = [];
+for (var i = 0; i < limit; i += 1) {
+	y = arr[i];
+	dataPoints.push({
+		x: i,
+		y: y                
+	});
+}
+dataSeries.dataPoints = dataPoints;
+data.push(dataSeries);    
+    
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	zoomEnabled: true,
+	title:{
+		text: "Neuron ID: "+ids +" "+title
+	},
+	axisY :{
+		includeZero:false
+	},
+	data: data  // random generator below
+});
+chart.render();
+
+}
+    
+window.onload = function () {
+
+var url_string = window.location.href;
+var url = new URL(url_string);
+var id = url.searchParams.get("id");
+console.log(id);
+if(id==null){
+    alert("No such file found ..quitting");
+}else{
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           // Typical action to be performed when the document is ready:
+           var arrX=JSON.parse(xhttp.responseText);
+            var arr=new Array();
+            Object.keys(arrX).forEach(function(key) {
+                arr.push(arrX[key]);
+                console.log('Key : ' + key + ', Value : ' + arrX[key]);
+            })
+           load_graph(url.searchParams.get("title"),id,arr);
+        }
+    };
+    xhttp.open("GET", "http://192.168.1.100:8888/training/"+id+".txt", true);
+    xhttp.send();
+}
+    
+    
+    
+                 
+}
+</script>
+<script src="canvasJS/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;">
+</div>
+</body>
+</html>
