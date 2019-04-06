@@ -60,6 +60,7 @@ ISSUE:
 2)Linear model is not working as expected due to logical error for now.I encourage to fork it.
 
 POTENTIAL:
+
 1)We can use the linear.php for reinforement learning.
 
 2)We can implement diffrent realtime models.
