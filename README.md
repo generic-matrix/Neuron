@@ -48,6 +48,7 @@ var_dump("1 ---> ".$n1->predict($mat1->input));
 var_dump("0 ---> ".$n1->predict($mat2->input));
 
 #We can get the weight's in the form of JSON ..very essencial for reinforcement learning.
+
 var_dump($n1->get_image());
 
 
