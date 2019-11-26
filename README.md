@@ -4,8 +4,7 @@ the linear.php will be made as a linear model , I encourage you to fork it .
 I have even attached canvasJS to get to visualize weights and the training accuracy in each neuron.
 
 Refer the functions :
-
-$x_json=json_decode( '[
+```$x_json=json_decode( '[
   {"input": [0,1,0,1,0,1,0,1,0,0,1,0,1,0,1]},
   {"input": [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]},
   {"input": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},
@@ -55,23 +54,10 @@ var_dump($n1->get_image());
 $n1->plot_training();
 
 $n1->plot_weight();
-
+```
 ISSUE:
 
 1) In neuron.php have a look at line 174 
 
 2)Linear model is not working as expected due to logical error for now.I encourage to fork it.
-
-
-POTENTIAL:
-
-1)We can use the linear.php for reinforement learning.
-
-2)We can implement diffrent realtime models.
-
-3)Will implement LTSM and CNN in near future.
-
-4)Will integrate wirh OPENCV and take it forward.
-
-5)we will add K4 cross validation test.
 
